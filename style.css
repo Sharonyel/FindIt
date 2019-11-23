@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The header. May need to change style? */
+header {
+    background-color: blue;
+    padding: -2px;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+}
+
+/* two columns/boxes*/
+nav {
+    float: left;
+    width: 15%;
+    height: 300px;
+    background: rgb(29, 204, 137);
+    padding: 20px;
+}
+
+/* style the list within the menu if needed */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    float: left;
+}
+
+/* Colums  */
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    background-color: blue;
+    padding: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
