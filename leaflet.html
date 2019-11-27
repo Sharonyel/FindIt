@@ -30,6 +30,7 @@
 
 <body>
     <input type="search" placeholder="Search City" id="search-bar">
+    <input type="button" value="GO!" id="search-button">
 
     <div id="mapid" style="width: 500px; height: 500px;"></div>
 
@@ -45,9 +46,14 @@
 
 var longitude;
 var latitude;
+var map = L.map('mapid')
+
+// function clearMap (){
+//   map.remove();
+// }
 
 function mapLocation(latitude, longitude) {
-        var map = L.map('mapid').setView([latitude, longitude], 13);
+         map.setView([latitude, longitude], 13);
 console.log(map);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -59,24 +65,29 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 var marker = L.marker([latitude, longitude]).addTo(map);
 marker.bindPopup("<b>Hello world!</b><br>I am in Uptown CLT").openPopup();
-
 }
 
-var searchCity = "Wesley Chapel, NC";
-    var queryURL = "https://www.mapquestapi.com/search/v2/radius?origin="+searchCity+"&radius=1&maxMatches=3&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl"
 
+
+$("#search-button").click( function(){
+  var searchCity = $("#search-bar").val();
+    var queryURL = "https://www.mapquestapi.com/search/v2/radius?origin="+searchCity+"&radius=1&maxMatches=3&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl"
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response)
 
-
+        
         longitude = response.origin.displayLatLng.lng;
         latitude = response.origin.displayLatLng.lat;
 
        mapLocation(latitude, longitude);
-    });
+      //  clearMap();
+        });
+});
+
+
 
   
 
