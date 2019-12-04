@@ -1,0 +1,76 @@
+body{
+  margin: auto;
+}
+h1{
+    text-align: center;
+    font-size: 70px;
+}
+input{
+    text-align: center;
+}
+.is-large{
+    width: 300px;
+    margin-left: 400px;
+}
+
+.button.is-warning{
+    height: 60px;
+    margin: 0;
+
+}
+.landingInfo{
+    padding: 10px;
+    /* text-align: center; */
+}
+.landingPaget{
+    background-image: url("/Users/sharonyvette/projects/Crime/assets/TTD2.png");
+    height: 200px;
+
+}
+.landingPageb{
+    background-image: url("/Users/sharonyvette/projects/Crime/assets/TTD2.png");
+    height: 200px;
+}
+
+.footerImg{
+    height: 200px;
+    margin-top: 0px;
+    padding: 10px;
+    background-image: url("/Users/sharonyvette/projects/Crime/assets/TTD2.png");
+}
+.tabs{
+    margin-bottom: 10px;
+    padding: 0px;
+}
+button{
+    padding: 20px;
+    width: 200px;
+    height: 100%;
+    margin: 20px;
+}
+.notification{
+    color: blue;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 5px;
+    padding: 10px;
+
+}
+header#header-animation {
+  
+    /* /!\ Ne pas recopier */
+    width: 400px;
+    height: 300px;
+    /* /!\ Ne pas recopier */
+
+    -webkit-transition: background 200ms ease-in-out 300ms;
+    -moz-transition: background 200ms ease-in-out 300ms;
+    -o-transition: background 200ms ease-in-out 300ms;
+    transition: background 200ms ease-in-out 300ms;
+}
+
+header#header-animation p.preload {
+  width: 100%;
+  text-align: center;
+  margin: 100px 0 0 0;
+}
