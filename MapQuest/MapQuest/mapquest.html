@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Leaflet CDN, CSS/Javascript -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+<!-- MapQuest APIs, Javascript -->
+  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl"></script>
+<script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl"></script>
+<script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css"/>
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <input type="search" placeholder="Search City" id="search-bar"></input>
+  <input type="button" value="GO!" id="search-button"></input>
+
+  <div id="locInfo"></div>
+
+  <script>
+  $("#search-button").click( function(){
+  var searchCity = $("#search-bar").val();
+  var queryURL = "https://www.mapquestapi.com/search/v2/radius?origin="+searchCity+"&radius=30&maxMatches=5&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|701101&outFormat=json&key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl";
+
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+  }).then(function (response) {
+      console.log(response);
+      console.log(response.origin.adminArea5);
+      var cityName = response.origin.adminArea5;
+      console.log(response.origin.displayLatLng.lat);
+      var lat = response.origin.displayLatLng.lat;
+      console.log(response.origin.displayLatLng.lng);
+      var lng = response.origin.displayLatLng.lng;
+      console.log(response.searchResults[0].name + " " + response.searchResults[0].shapePoints[0] + " " + response.searchResults[0].shapePoints[1] + response.searchResults[0].fields.address + " " + response.searchResults[0].fields.phone)
+      var resultOne = response.searchResults[0].name + " " + response.searchResults[0].shapePoints[0] + " " + response.searchResults[0].shapePoints[1] + response.searchResults[0].fields.address + " " + response.searchResults[0].fields.phone;
+      console.log(response.searchResults[1].name + " " + response.searchResults[1].shapePoints[0] + " " + response.searchResults[1].shapePoints[1] + response.searchResults[1].fields.address + " " + response.searchResults[1].fields.phone)
+      var resultTwo = response.searchResults[1].name + " " + response.searchResults[1].shapePoints[0] + " " + response.searchResults[1].shapePoints[1] + response.searchResults[1].fields.address + " " + response.searchResults[1].fields.phone;
+      console.log(response.searchResults[2].name + " " + response.searchResults[2].shapePoints[0] + " " + response.searchResults[2].shapePoints[1] + response.searchResults[2].fields.address + " " + response.searchResults[2].fields.phone)
+      var resultThree = response.searchResults[2].name + " " + response.searchResults[2].shapePoints[0] + " " + response.searchResults[2].shapePoints[1] + response.searchResults[2].fields.address + " " + response.searchResults[2].fields.phone;
+      console.log(response.searchResults[3].name + " " + response.searchResults[3].shapePoints[0] + " " + response.searchResults[3].shapePoints[1] + response.searchResults[3].fields.address + " " + response.searchResults[3].fields.phone)
+      var resultFour = response.searchResults[3].name + " " + response.searchResults[3].shapePoints[0] + " " + response.searchResults[3].shapePoints[1] + response.searchResults[3].fields.address + " " + response.searchResults[3].fields.phone;
+      console.log(response.searchResults[1].name + " " + response.searchResults[1].shapePoints[0] + " " + response.searchResults[1].shapePoints[1] + response.searchResults[4].fields.address + " " + response.searchResults[4].fields.phone)
+      var resultFive = response.searchResults[4].name + " " + response.searchResults[4].shapePoints[0] + " " + response.searchResults[4].shapePoints[1] + response.searchResults[4].fields.address + " " + response.searchResults[4].fields.phone;
+      document.getElementById("locInfo").innerHTML = cityName + " " + lat + " " + lng + "<br>" + "<br>" + resultOne + "<br>" +  resultTwo + "<br>" + resultThree + "<br>" + resultFour + "<br>" + resultFive;
+  });
+});
+</script>
+
+</body>
+</html>
+
+<!-- 
+Tourist Attractions
+group_sic_code=?|999333
+
+Buses/Rentals
+group_sic_code=?|414201
+
+Hotels/Motels
+group_sic_code=?|701101
+
+Shopping
+group_sic_code=?|651201
+
+Bars
+group_sic_code=?|581301
+
+Food
+group_sic_code=?|581208
+
+ -->
