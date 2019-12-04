@@ -1,9 +1,16 @@
 body{
   margin: auto;
+  background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+
 }
-h1{
+h1.title{
     text-align: center;
-    font-size: 70px;
+    font-size: 120px;
+    font-family: 'Berkshire Swash', cursive;
+}
+h1.pageTitle, p.pageInst{
+    text-align: center;
+    font-family: 'Berkshire Swash', cursive;
 }
 input{
     text-align: center;
@@ -16,12 +23,13 @@ input{
 .button.is-warning{
     height: 60px;
     margin: 0;
+    font-size: 20px;
 
 }
 #dropDown{
     height: 60px;
     width: 300px;
-    font-size: 30px;
+    font-size: 20px;
 }
 .landingInfo{
     padding: 10px;
@@ -40,7 +48,6 @@ input{
     border: 20px;
     padding: 20px;
     margin-bottom: 30px;
-    text-transform: capitalize;
 }
 #mapid{
     padding: 5px;
