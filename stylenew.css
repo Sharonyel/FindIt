@@ -20,6 +20,7 @@ input{
 }
 .landingInfo{
     padding: 10px;
+    /* text-align: center; */
 }
 .landingPaget{
     background-image: url("/Users/sharonyvette/projects/Crime/assets/TTD2.png");
