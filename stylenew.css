@@ -10,13 +10,18 @@ input{
 }
 .is-large{
     width: 300px;
-    margin-left: 400px;
+    margin-left: 200px;
 }
 
 .button.is-warning{
     height: 60px;
     margin: 0;
 
+}
+#dropDown{
+    height: 60px;
+    width: 300px;
+    font-size: 30px;
 }
 .landingInfo{
     padding: 10px;
@@ -31,12 +36,24 @@ input{
     background-image: url("/Users/sharonyvette/projects/Crime/assets/TTD2.png");
     height: 200px;
 }
-
+#locInfo{
+    border: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+#mapid{
+    padding: 5px;
+    margin: 0;
+}
 .footerImg{
     height: 200px;
     margin-top: 0px;
     padding: 10px;
     background-image: url("/Users/sharonyvette/projects/Crime/assets/TTD2.png");
+}
+
+.message.is-medium{
+    font-size: 25px;
 }
 .tabs{
     margin-bottom: 10px;
@@ -55,22 +72,4 @@ button{
     margin-bottom: 5px;
     padding: 10px;
 
-}
-header#header-animation {
-  
-    /* /!\ Ne pas recopier */
-    width: 400px;
-    height: 300px;
-    /* /!\ Ne pas recopier */
-
-    -webkit-transition: background 200ms ease-in-out 300ms;
-    -moz-transition: background 200ms ease-in-out 300ms;
-    -o-transition: background 200ms ease-in-out 300ms;
-    transition: background 200ms ease-in-out 300ms;
-}
-
-header#header-animation p.preload {
-  width: 100%;
-  text-align: center;
-  margin: 100px 0 0 0;
 }
