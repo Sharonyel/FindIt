@@ -1,6 +1,11 @@
 var longitude;
 var latitude;
-
+function removeSpecialChars(str) {
+  return str.replace(/(?!\w|\s)./g, '')
+    .replace(/\s+/g, ' ')
+    .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2')
+    .replace(/(\d{1})(\d{3})(\d{3})(\d+)/, '$1-$2-$3-$4');
+}
 var map = L.map('mapid')
 
 navigator.geolocation.getCurrentPosition(function(position) {
@@ -24,7 +29,7 @@ marker.bindPopup("<b>You Are Here</b>").openPopup();
 }
 $("#search-button").click( function(){
  
-  var searchCity = $("#search-bar").val();
+  var searchCity = $("#search-bar").val()
   var sicCode = $('#dropDown').val()
   // var catName = $('#dropDown').textContent;
   // console.log(catName)
@@ -44,10 +49,20 @@ $("#search-button").click( function(){
   var cityName = response.origin.adminArea5;
   var lat = response.origin.displayLatLng.lat;
   var lng = response.origin.displayLatLng.lng;
+  var googleUrl ='http://www.google.com/search?q=';
+  function search()
+        {
+          query = searchCity;
+          url ='http://www.google.com/search?q=' + query;
+          window.open(url,'_blank');
+        }
+         
 
+  
+       
 console.log(response)
 
-      var marker1 =  L.marker([response.searchResults[0].shapePoints["0"], response.searchResults[0].shapePoints["1"]]).addTo(map);
+      var marker1 = L.marker([response.searchResults[0].shapePoints["0"], response.searchResults[0].shapePoints["1"]]).addTo(map);
       marker1.bindPopup(response.searchResults[0].name).openPopup();
 
 
@@ -64,25 +79,42 @@ console.log(response)
        var marker5 = L.marker([response.searchResults[4].shapePoints["0"], response.searchResults[4].shapePoints["1"]]).addTo(map);
        marker5.bindPopup(response.searchResults[4].name).openPopup();
 
-       var resultOne = "<b>" + response.searchResults[0].name + "</b><br>" + response.searchResults[0].fields.address + "<br>" + response.searchResults[0].fields.phone + "<br>";
+       
+        // Cities + links
+       var resultOne = "<b>" + "<a href = 'http://www.google.com/search?q=" + response.searchResults[0].name + "'target=_blank>" + response.searchResults[0].name + "</a>" + "</b><br>" + response.searchResults[0].fields.address + "<br>" + removeSpecialChars(response.searchResults[0].fields.phone) + "<br>";
  
-       var resultTwo = "<b>" + response.searchResults[1].name + "</b><br>" + response.searchResults[1].fields.address + "<br>" + response.searchResults[1].fields.phone + "<br>";
+       var resultTwo = "<b>" + response.searchResults[1].name + "</b><br>" + response.searchResults[1].fields.address + "<br>" + removeSpecialChars(response.searchResults[1].fields.phone) + "<br>";
 
-       var resultThree = "<b>" + response.searchResults[2].name + "</b><br>"  + response.searchResults[2].fields.address + "<br>" + response.searchResults[2].fields.phone + "<br>";
+       var resultThree = "<b>" + response.searchResults[2].name + "</b><br>"  + response.searchResults[2].fields.address + "<br>" + removeSpecialChars(response.searchResults[2].fields.phone) + "<br>";
 
-       var resultFour = "<b>" + response.searchResults[3].name + "</b><br>" + response.searchResults[3].fields.address + "<br>" + response.searchResults[3].fields.phone + "<br>";
+       var resultFour = "<b>" + response.searchResults[3].name + "</b><br>" + response.searchResults[3].fields.address + "<br>" + removeSpecialChars(response.searchResults[3].fields.phone) + "<br>";
 
-        var resultFive = "<b>" + response.searchResults[4].name + "</b><br>"  + response.searchResults[4].fields.address + "<br>" +response.searchResults[4].fields.phone + "<br>";
-     
-  
-       $("#locInfo").append("<article class='message is-medium'></p><p>"+resultOne+"</p></article>");
-       $("#locInfo").append("<article class='message is-medium'></p><p>"+resultTwo+"</p></article>");
-       $("#locInfo").append("<article class='message is-medium'></p><p>"+resultThree+"</p></article>");
-       $("#locInfo").append("<article class='message is-medium'></p><p>"+resultFour+"</p></article>");
-       $("#locInfo").append("<article class='message is-medium'></p><p>"+resultFive+"</p></article>");
+        var resultFive = "<b>" + response.searchResults[4].name + "</b><br>"  + response.searchResults[4].fields.address + "<br>" + removeSpecialChars(response.searchResults[4].fields.phone) + "<br>";
+
+        var cityLink = 'http://www.google.com/search?q=' + searchCity;
+
+        // City Link
+        $("#locInfo").append("<article class='message is-medium'><h1>" + "<a target=_blank href =" + cityLink + ">" + searchCity +"</a></h1></article>"); 
+          
+        // POI cards
+       $("#locInfo").append("<article class='message is-medium'><p>"+resultOne+"</p></article>");
+
+       $("#locInfo").append("<article class='message is-medium'><p>"+resultTwo+"</p></article>");
+
+       $("#locInfo").append("<article class='message is-medium'><p>"+resultThree+"</p></article>");
+
+       $("#locInfo").append("<article class='message is-medium'><p>"+resultFour+"</p></article>");
+
+       $("#locInfo").append("<article class='message is-medium'><p>"+resultFive+"</p></article>");
+
+      
 
         });
-});
+
+        $("#locInfo").empty();
+
+
+ });
 
 
 

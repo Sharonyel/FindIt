@@ -40,6 +40,7 @@ input{
     border: 20px;
     padding: 20px;
     margin-bottom: 30px;
+    text-transform: capitalize;
 }
 #mapid{
     padding: 5px;
