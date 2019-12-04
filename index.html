@@ -7,9 +7,7 @@
   <title>Things To Do</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <link rel="stylesheet" href="stylenew.css">
-  <link rel="stylesheet" href="Welcome.html">
-
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Permanent+Marker&display=swap" rel="stylesheet">  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <!-- Leaflet CDN, CSS/Javascript -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -26,139 +24,45 @@
     crossorigin="anonymous"></script>
 
 <body>
-  <!-- <section class="hero is-primary is-medium">
-        <!-- Hero head: will stick at the top -->
-  <section class="landingPaget">
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-      <div class="container has-text-centered">
-
-      </div>
-    </div>
-
-  </section>
   <section class="hero is-bold">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
-          Things To Do
-        </h1>
-        <!-- <h2 class="subtitle">
-            Enter Your City
-          </h2> -->
+        <h1 class="pageTitle">Looking For Something?.... Let Us Help You</h1>
+        <h1 class="title">Find It!</h1>
+        <p class="pageInst">Enter a City and select a Catagory</p>
       </div>
     </div>
   </section>
   <section class="landingInfo">
     <input class="input is-large" type="text" id="search-bar" placeholder="Enter A City">
+      <select id="dropDown">
+          <option>Select A Catagory</option>
+          <option value="999333">Attractions</option>
+          <option value="414201">Buses/Rentals</option>
+          <option value="581301">Bars</option>
+          <option value="581208">Food</option>
+          <option value="701101">Hotels</option>
+          <option value="531104">Retail Shops</option>
+      </select>
+    
     <button class="button is-warning" id="search-button">Search</button>
   </section>
-  <div id="mapid" style="width: 600px; height: 300px;"></div>
-  <section>
-  <div id="mapid"></div>
-  <!-- <div id="mapCity"></div> -->
 
-</section>
 
-  <!-- <div class="hero-body">
-    <div class="container has-text-centered">
+<div class="columns is-vcentered">
+    <div class="column is-8">
+        <div id="mapid" style="width: 800px; height: 800px;"></div>
 
     </div>
-  </div> -->
-  <section>
-    <div class="tabs is-fullwidth is-toggle is-toggle-rounded">
-      <ul>
-        <li>
-          <a>
-            <span class="icon is-medium"><i class="fas fa-shopping-bag"></i></span>
-            <span>Shopping</span>
-          </a>
-        </li>
-        <li>
-          <a>
-            <span class="icon is-medium"><i class="fas fa-hotel"></i></span>
-            <span>Hotels</span>
-          </a>
-        </li>
-        <li>
-          <a>
-            <span class="icon is-medium"><i class="fas fa-car"></i></span>
-            <span>Rental Car</span>
-          </a>
-        </li>
-        <li>
-          <a>
-            <span class="icon is-medium"><i class="fas fa-theater-masks"></i></span>
-            <span>Entertainment</span>
-          </a>
-        </li>
-        <li>
-          <a>
+    <div class="column">
+        <div id="locInfo"></div>
+      </div>
+  </div>
 
-            <span class="icon is-medium"><i class="fas fa-film"></i></span>
-            <span>Attractions</span>
-          </a>
-        </li>
-        <li>
-          <a>
-            <span class="icon is-medium"><i class="fas fa-utensils"></i></span>
-            <span>Restaurants</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
+
 
 </body>
-<!-- <div class="content has-text-centered">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </footer> -->
-
-<!-- jQuery -->
 <script src="jquery-3.4.1.min.js"></script>
 <script src="script.js"></script>
-<!-- <script>
- 
-var longitude;
-var latitude;
-var map = L.map('mapid')
-function mapLocation(latitude, longitude) {
-         map.setView([latitude, longitude], 13);
- 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1Ijoiam90Z3oiLCJhIjoiY2szYnNyMW94MHJ2bTNwbWh5OXRieTRuZiJ9.VSEzFv1tyPcznHLwTt1CHA'
-}).addTo(map);
-
-// $("#mapcontainer").append('<div id="mapid" width=500px height=500px>')
-
-
-var marker = L.marker([latitude, longitude]).addTo(map);
-marker.bindPopup("<b>Hello world!</b><br>I am in Uptown CLT").openPopup();
-}
-$("#search-button").click( function(){
-  var searchCity = $("#search-bar").val();
-  console.log(searchCity)
-    var queryURL = "https://www.mapquestapi.com/search/v2/radius?origin="+searchCity+"&radius=1&maxMatches=3&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl"
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response)
-        console.log(searchCity)
-        longitude = response.origin.displayLatLng.lng;
-        latitude = response.origin.displayLatLng.lat;
-       mapLocation(latitude, longitude);
-      //  clearMap();
-        });
-})
-</script>  -->
 
 </html>
