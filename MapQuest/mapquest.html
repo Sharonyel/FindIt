@@ -1,6 +1,17 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
+<head>
+    <!-- Leaflet CDN, CSS/Javascript -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+<!-- MapQuest APIs, Javascript -->
+  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl"></script>
+<script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-geocoding.js?key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl"></script>
+<script src="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.js"></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/place-search-js/v1.0.0/place-search.css"/>
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
@@ -10,21 +21,75 @@
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
+</head>
+<body>
+  <form id= "searchForm">
+  <input type="search" placeholder="Search City" id="search-bar"></input>
+  <select id="dropDown">
+      <option value="581208">Food</option>
+      <option value="701101">Hotels</option>
+      <option value="999333">Attractions</option>
+      <option value="414201">Buses/Rentals</option>
+      <option value="581301">Bars</option>
+  </select>
+  <input type="button" value="GO!" id="search-button"></input>
+  </form>
+  <div id="locInfo"></div>
 
-    <script type="text/javascript">
-    var searchCity = "Gastonia"
-    var queryURL = "https://www.mapquestapi.com/search/v2/radius?origin="+searchCity+"&radius=1&maxMatches=3&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl"
+  <script>
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response)
-    })
-    </script>
-  </head>
+  $("#search-button").click( function(){
+  var searchCity = $("#search-bar").val();
+  var sicCode = $('#dropDown').val()
+  var queryURL = "https://www.mapquestapi.com/search/v2/radius?origin="+searchCity+"&radius=30&maxMatches=5&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|"+sicCode+"&outFormat=json&key=6RHaXG5h6NsBxqDGSe1ay54qfbq31qnl";
 
-  <body style="border: 0; margin: 40px;">
-    
-  </body>
+  
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+  }).then(function (response) {
+      console.log(response);
+      console.log(response.origin.adminArea5);
+      var cityName = response.origin.adminArea5;
+      console.log(response.origin.displayLatLng.lat);
+      var lat = response.origin.displayLatLng.lat;
+      console.log(response.origin.displayLatLng.lng);
+      var lng = response.origin.displayLatLng.lng;
+      console.log(response.searchResults[0].name + " " + response.searchResults[0].shapePoints[0] + ", " + response.searchResults[0].shapePoints[1] + response.searchResults[0].fields.address + " " + response.searchResults[0].fields.phone)
+      var resultOne = "<font size = +2>" + response.searchResults[0].name + "</font><br>" + response.searchResults[0].shapePoints[0] + ", " + response.searchResults[0].shapePoints[1] + "<br>" + "<b>Address: </b>" + response.searchResults[0].fields.address + "<br>" + "<b>Phone: </b>" + response.searchResults[0].fields.phone + "<br>";
+      console.log(response.searchResults[1].name + " " + response.searchResults[1].shapePoints[0] + ", " + response.searchResults[1].shapePoints[1] + response.searchResults[1].fields.address + " " + response.searchResults[1].fields.phone)
+      var resultTwo = "<font size = +2>" + response.searchResults[1].name + "</font><br>" + response.searchResults[1].shapePoints[0] + ", " + response.searchResults[1].shapePoints[1] + "<br>" + "<b>Address: </b>" + response.searchResults[1].fields.address + "<br>" + "<b>Phone: </b>" + response.searchResults[1].fields.phone + "<br>";
+      console.log(response.searchResults[2].name + " " + response.searchResults[2].shapePoints[0] + ", " + response.searchResults[2].shapePoints[1] + response.searchResults[2].fields.address + " " + response.searchResults[2].fields.phone)
+      var resultThree = "<font size = +2>" + response.searchResults[2].name + "</font><br>" + response.searchResults[2].shapePoints[0] + ", " + response.searchResults[2].shapePoints[1] + "<br>" + "<b>Address: </b>" + response.searchResults[2].fields.address + "<br>" + "<b>Phone: </b>" + response.searchResults[2].fields.phone + "<br>";
+      console.log(response.searchResults[3].name + " " + response.searchResults[3].shapePoints[0] + ", " + response.searchResults[3].shapePoints[1] + response.searchResults[3].fields.address + " " + response.searchResults[3].fields.phone)
+      var resultFour = "<font size = +2>" + response.searchResults[3].name + "</font><br>" + response.searchResults[3].shapePoints[0] + ", " + response.searchResults[3].shapePoints[1] + "<br>" + "<b>Address: </b>" + response.searchResults[3].fields.address + "<br>" + "<b>Phone: </b>" + response.searchResults[3].fields.phone + "<br>";
+      console.log(response.searchResults[1].name + " " + response.searchResults[1].shapePoints[0] + ", " + response.searchResults[1].shapePoints[1] + response.searchResults[4].fields.address + " " + response.searchResults[4].fields.phone)
+      var resultFive = "<font size = +2>" + response.searchResults[4].name + "</font><br>" + response.searchResults[4].shapePoints[0] + ", " + response.searchResults[4].shapePoints[1] + "<br>" + "<b>Address: </b>" + response.searchResults[4].fields.address + "<br>" + "<b>Phone: </b>" + response.searchResults[4].fields.phone + "<br>";
+      document.getElementById("locInfo").innerHTML = "<font size = +3>" + "City: " + cityName + "</font><br>" + "Latitude and Longitude: " + lat + ", " + lng + "<br>" + "<br>" + "<font size = +3>" + "Whats Nearby:" + "</font><br><br>" + resultOne + "<br>" +  resultTwo + "<br>" + resultThree + "<br>" + resultFour + "<br>" + resultFive;
+  });
+});
+</script>
+
+</body>
 </html>
+
+<!-- 
+Tourist Attractions
+group_sic_code=?|999333
+
+Buses/Rentals
+group_sic_code=?|414201
+
+Hotels/Motels
+group_sic_code=?|701101
+
+Shopping
+group_sic_code=?|651201
+
+Bars
+group_sic_code=?|581301
+
+Food
+group_sic_code=?|581208
+
+ -->
