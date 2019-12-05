@@ -44,15 +44,15 @@ Screen shots of the output
  
 How to use the project
 ---
-On Find It! the user can search a city and look up different Places of Interest depending on what they are looking to do around the city. For example the user is looking for a place to stay in the city of Charlotte. All they would have to do is type "Charlotte" in the search bar and just select "Hotels" from the dropdown menu. 
+On Find It! the user can search a city and look up different Places of Interest depending on what they are looking to do around the city. For example the user is looking for a place to stay in the city of Charlotte. All they would have to do is type "Charlotte" in the search bar and just select "Hotels" from the dropdown menu. This will put markers around the map with hotels within a certain radius and also list them with some basic information like the address and phone number, it also includes a link that will take the user to a google search of the POI. The dropdown menu contains many elements so the user is not limited to just search for hotels. They can search for food, bars, transportations services, etc. 
 
 
 Collaboration
 ---
 * Brandon Huddleton
+* Brittany Loy
 * Jose Torres
 * Sharon Yelverton
-* Brittany
  
 Credits
 ---
