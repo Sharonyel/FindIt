@@ -29,8 +29,8 @@ List of Files
 Code Examples
 ---
  
- ![HTML File](assets/html.png)
- ![CSS File](assets/css.PNG)
+ <img src= "assets/html.png" width=400">
+ assets/css.PNG
  ![Javascript File](assets/javascript.PNG)
 
 
