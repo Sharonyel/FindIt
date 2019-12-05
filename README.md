@@ -31,7 +31,9 @@ List of Files
 Code Exmaples:
 ---
  
- <img src="assets/images/samplecode1.png" width=300> 
+ ![HTML File](assets/html.png)
+ ![CSS File](assets/css.PNG)
+ ![Javascript File](assets/javascript.PNG)
 
 
 
@@ -41,15 +43,14 @@ Code Exmaples:
 Screen shots of the output
 ---
  
-<img src="assets/images/screenshotaboutme.png" width=300> 
+ ![Finished Product](assets/findit.PNG)
 
- 
-Project source can be downloaded from (https://sharonyel.github.io/myportfolio/) 
+  
 ---
  
 How to use the project
 ---
- 
+
 Collabration
 ---
 Brandon Huddleton

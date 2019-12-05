@@ -1,7 +1,7 @@
 body{
     width: 100%;
     height: 100%;
-    background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+    background-image: url("assets/bg1.jpg");
 
 }
 .hero-body{
@@ -79,7 +79,7 @@ button{
     body{
         width: 100%;
         height: 100%;
-        background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+        background-image: url("assets/bg1.jpg");
 
     }
     .leaflet-container{
@@ -103,7 +103,7 @@ button{
     body{
         width: 100%;
         height: 100%;
-        background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+        background-image: url("assets/bg1.jpg");
 
     }
         #mapid{
@@ -117,7 +117,7 @@ button{
         body{
             width: 100%;
             height: 100%;
-            background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+            background-image: url("assets/bg1.jpg");
     
         }
             #mapid{
@@ -129,5 +129,7 @@ button{
      
 
     }
+
+
 
     
