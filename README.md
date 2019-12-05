@@ -47,7 +47,7 @@ How to use the project
 
 Collabration
 ---
-<a href="github.com/BrandonHuddleston">Brandon Huddleton</a>
+Brandon Huddleton
 Jose Torres
 Sharon Yelverton
 Brittany
