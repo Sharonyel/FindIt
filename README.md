@@ -3,6 +3,7 @@ An app that lets you search a city and find things in that city.  You can search
 
 Motivation
 ---
+After researching many API’s, and getting good responses from places and maps, we pulled the information together and decided to use a places search within cities 
 
 
 Code Style
