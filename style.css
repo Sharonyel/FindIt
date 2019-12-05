@@ -30,14 +30,13 @@ input{
     padding: 20px;
     margin-bottom: 30px;
     text-transform: capitalize;
-    width: 45%;
+    width: 40%;
     float: right;
     background: white;
 }
 #mapid{
-    padding: 20px;
     float: left;
-    width: 45%;
+    width: 50%;
 }
 
 .message.is-medium{
@@ -125,9 +124,15 @@ button:hover {
         #mapid{
         padding: 5px;
         margin: 0;
-        width: 300px;
-        height: 200px;
+        width: 100%;
+        float: none;
     }
+
+    #locInfo{
+        float: none;
+        width: 100%;
+    }
+
     }
     @media screen and (max-width: 642px) {
         body{
@@ -137,10 +142,13 @@ button:hover {
     
         }
         #mapid{
-            padding: 5px;
-            margin: 0;
-            width: 100px;
-            height: 100px;
+            width: 80%;
+            height: 10px;
+            margin-left: 10%;
+        }
+        #locInfo{
+            float: none;
+            width: 100%;
         }
      
 
