@@ -5,7 +5,6 @@ Motivation
 ---
 
 
-
 Code Style
 ---
  * HTML
@@ -26,9 +25,7 @@ List of Files
   * scripts.js
   * style.css
 
- 
- 
-Code Exmaples:
+Code Examples
 ---
  
  ![HTML File](assets/html.png)
@@ -36,9 +33,6 @@ Code Exmaples:
  ![Javascript File](assets/javascript.PNG)
 
 
-
- 
- 
  
 Screen shots of the output
 ---
@@ -53,7 +47,7 @@ How to use the project
 
 Collabration
 ---
-Brandon Huddleton
+<a href="github.com/BrandonHuddleston">Brandon Huddleton</a>
 Jose Torres
 Sharon Yelverton
 Brittany
