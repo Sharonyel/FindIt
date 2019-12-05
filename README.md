@@ -29,29 +29,31 @@ List of Files
 Code Examples
 ---
  
- ![HTML File](assets/html.png)
- ![CSS File](assets/css.PNG)
- ![Javascript File](assets/javascript.PNG)
+ ![HTML File](assets/html.png =200x200)
+ ![CSS File](assets/css.PNG =200x200)
+ ![Javascript File](assets/javascript.PNG =200x200)
 
 
  
 Screen shots of the output
 ---
  
- ![Finished Product](assets/findit.PNG)
+ ![Finished Product](assets/findit.PNG =200x200)
 
   
 ---
  
 How to use the project
 ---
+On Find It! the user can search a city and look up different Places of Interest depending on what they are looking to do around the city. For example the user is looking for a place to stay in the city of Charlotte. All they would have to do is type "Charlotte" in the search bar and just select "Hotels" from the dropdown menu. 
 
-Collabration
+
+Collaboration
 ---
-Brandon Huddleton
-Jose Torres
-Sharon Yelverton
-Brittany
+* Brandon Huddleton
+* Jose Torres
+* Sharon Yelverton
+* Brittany
  
 Credits
 ---
