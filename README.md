@@ -15,8 +15,8 @@ Code Style
  * BULMA
  * ajax
  
- API's
- ---
+API's
+---
  * mapquest
  * leaflet
   
@@ -28,33 +28,34 @@ List of Files
 
  
  
- Code Exmaples:
- ---
+Code Exmaples:
+---
  
  <img src="assets/images/samplecode1.png" width=300> 
 
-  <img src="assets/images/samplecode2.png" width=300>
 
-   <img src="assets/images/samplecode3.png" width=300>
+
  
  
  
- Screen shots of the output
- ---
+Screen shots of the output
+---
  
 <img src="assets/images/screenshotaboutme.png" width=300> 
-<img src="assets/images/screenshotcontact.png" width=300> 
-<img src="assets/images/screenshotportfolio.png" width=300> 
+
  
- Project source can be downloaded from (https://sharonyel.github.io/myportfolio/) 
- ---
+Project source can be downloaded from (https://sharonyel.github.io/myportfolio/) 
+---
  
- How to use the project
- ---
+How to use the project
+---
  
 Collabration
 ---
-Brandon H
+Brandon Huddleton
+Jose Torres
+Sharon Yelverton
+Brittany
  
 Credits
 ---
