@@ -29,16 +29,16 @@ List of Files
 Code Examples
 ---
  
- ![HTML File](assets/html.png =200x200)
- ![CSS File](assets/css.PNG =200x200)
- ![Javascript File](assets/javascript.PNG =200x200)
+ ![HTML File](assets/html.png)
+ ![CSS File](assets/css.PNG)
+ ![Javascript File](assets/javascript.PNG)
 
 
  
 Screen shots of the output
 ---
  
- ![Finished Product](assets/findit.PNG =200x200)
+ ![Finished Product](assets/findit.PNG)
 
   
 ---
