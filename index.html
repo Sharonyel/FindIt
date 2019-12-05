@@ -4,9 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Things To Do</title>
+  <link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css">
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="smallscreen.css">
+  <title>Find It</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-  <link rel="stylesheet" href="stylenew.css">
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Permanent+Marker&display=swap" rel="stylesheet">  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <!-- Leaflet CDN, CSS/Javascript -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -29,32 +31,49 @@
       <div class="container">
         <h1 class="pageTitle">Looking For Something?.... Let Us Help You</h1>
         <h1 class="title">Find It!</h1>
-        <p class="pageInst">Enter a City and select a Catagory</p>
+        <p class="pageInst">Enter a City and Select a Catagory</p>
       </div>
     </div>
   </section>
   <section class="landingInfo">
-    <input class="input is-large" type="text" id="search-bar" placeholder="Enter A City">
-      <select id="dropDown">
-          <option>Select A Catagory</option>
+      <div class="col-sm-2"></div>
+
+    <input class="input is-large col-sm-3" type="text" id="search-bar" placeholder="Enter A City">
+      <select class="col-sm-3" id="dropDown">
+          <option>Selection</option>
+          <option value="411101">Airport Transportation Service</option>
           <option value="999333">Attractions</option>
-          <option value="414201">Buses/Rentals</option>
+          <option value="551102">Auto Dealers</option>
+          <option value="751401">Auto Rental</option>
+          <option value="602101">Banks</option>
           <option value="581301">Bars</option>
+          <option value="594201">Book Stores</option>
+          <option value="531102">Department Stores</option>
+          <option value="546105">Doughnuts</option>
+          <option value="175203">Flooring</option>
+          <option value="599201">Florists</option>
           <option value="581208">Food</option>
+          <option value="541101">Food Markets</option>
+          <option value="554101">Gas Stations</option>
+          <option value="541105">Grocery Stores</option>
           <option value="701101">Hotels</option>
+          <option value="581203">Ice Cream Parlors</option>
+          <option value="591205">Pharmacies</option>
+          <option value="581254">Restaurants Cyber Cafes</option>
           <option value="531104">Retail Shops</option>
       </select>
     
-    <button class="button is-warning" id="search-button">Search</button>
+    <button class="button is-warning col-sm-2" id="search-button">Search</button>
+  <div class="col-sm-2"></div>
   </section>
 
 
 <div class="columns is-vcentered">
-    <div class="column is-8">
+    <div class="column is-mobile col-sm-9">
         <div id="mapid" style="width: 800px; height: 800px;"></div>
 
     </div>
-    <div class="column">
+    <div class="column is-mobile col-sm-3">
         <div id="locInfo"></div>
       </div>
   </div>

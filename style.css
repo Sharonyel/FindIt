@@ -1,0 +1,133 @@
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+
+}
+.hero-body{
+    padding: 10px;
+}
+h1.title{
+    text-align: center;
+    font-size: 120px;
+    font-family: 'Berkshire Swash', cursive;
+}
+h1.pageTitle, p.pageInst{
+    text-align: center;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 30px;
+}
+input{
+    text-align: center;
+}
+.is-large{
+    width: 300px;
+}
+
+.button.is-warning{
+    height: 60px;
+    margin: 0;
+    font-size: 20px;
+
+}
+#dropDown{
+    height: 60px;
+    width: 300px;
+    font-size: 20px;
+    padding: 30px;
+}
+.landingInfo{
+    padding: 10px;
+    width: 100%;
+    margin-left: 200px;
+}
+#locInfo{
+    border: 20px;
+    border-color: grey;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+#mapid{
+    padding: 5px;
+    margin: 0;
+}
+
+.message.is-medium{
+    font-size: 25px;
+    text-align: center;
+}
+#locBox{
+    border: 20px;
+    border-color: grey;
+}
+#cityHeader{
+    background: none;
+    font-size: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#sicname{
+    font-size: 20px;
+}
+button{
+    padding: 20px;
+    width: 200px;
+    height: 100%;
+    margin-right: 20px;
+}
+@media screen and (max-width: 980px) {
+    body{
+        width: 100%;
+        height: 100%;
+        background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+
+    }
+    .leaflet-container{
+        padding: 5px;
+        margin: 0;
+        width: 50%;
+        height: 200px;
+    }
+    element.style{
+        width: 50%;
+        height: 300px;
+    }
+    .landingInfo{
+        padding: 10px;
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    }
+    @media screen and (max-width: 768px) {
+    body{
+        width: 100%;
+        height: 100%;
+        background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+
+    }
+        #mapid{
+        padding: 5px;
+        margin: 0;
+        width: 300px;
+        height: 200px;
+    }
+    }
+    @media screen and (max-width: 642px) {
+        body{
+            width: 100%;
+            height: 100%;
+            background-image: url("/Users/sharonyvette/projects/Crime/assets/bg1.jpg");
+    
+        }
+            #mapid{
+            padding: 5px;
+            margin: 0;
+            width: 100px;
+            height: 100px;
+        }
+     
+
+    }
+
+    
