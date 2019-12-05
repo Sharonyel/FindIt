@@ -30,14 +30,14 @@ Code Examples
 ---
  
  <img src= "assets/html.png" width=400>
- <img src="assets/css.PNG" width=400
+ <img src="assets/css.PNG" width=400>
  <img src="assets/javascript.PNG" width=400>
 
  
 Screen shots of the output
 ---
  
- ![Finished Product](assets/findit.PNG)
+<img src= "assets/findit.PNG" width=400>
 
   
 ---
